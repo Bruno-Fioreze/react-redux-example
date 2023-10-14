@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUsers, useUsers } from "./redux/sliceUsers";
 import getUsers from "./services/getUsers"
 import { UserState } from "./types/user"
+import UserCard from "./components/UserCard"
+import "./App.css"
 
 function App() {
   const users = useSelector(useUsers);
@@ -23,22 +25,14 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <ul>
+    <div className="user-list-container">
         {users && users.map(
-          (user) => {
+          (user: UserState) => {
             return (
-              <>
-                <div>{user.first_name}</div>
-                <div>{user.last_name}</div>
-                <div>{user.id}</div>
-                <div>{user.email}</div>
-                <hr/>
-              </>
+              <UserCard user={user} />
             )
           }
         )} 
-      </ul>
     </div>
   );
 }
