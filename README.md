@@ -1,19 +1,6 @@
-# Utilizando Redux com typescript
+# Próximos passos
 
-Neste video/projeto eu exemplifiquei a utilização do Redux + typescript  com React!
-
-Link do meu vídeo no youtube: https://youtu.be/7YBTbYIGzAk
-
-A ideia é passar de maneira simples e rápida a utilização do Redux para o gerenciamento de estado
-
-## Funcionalidades
-
-- Listar as linguagens de programação (useSelector)
-- Adicionar uma nova linguagem de programação (useDispatch)
-- Favoritar/Desfavoritar uma linguagem de programação (useDispatch)
-
-## Ferramentas utilizadas
-    
-    - React-redux: https://react-redux.js.org/
-    - Redux toolkit: https://redux-toolkit.js.org/
-
+> Criar um component para o header
+> Melhorar a aparência dos botôes e do input
+> Criar um estado com redux para o filter ( deixei dessa forma para testar )
+> Adicionar uma lib de alerta para pesquisa com sucesso ou não
