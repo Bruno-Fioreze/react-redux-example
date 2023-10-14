@@ -9,8 +9,6 @@ import "./App.css"
  
 function App() {
   const users = useSelector(useUsers);
-
-
   const dispatch = useDispatch();
  
   const populateUsers = () => {
@@ -21,12 +19,6 @@ function App() {
     };
     fetchData();
   }
-
-  useEffect(() => { 
-    populateUsers()
-  }, []);  
-  
-
 
   return (
     <>

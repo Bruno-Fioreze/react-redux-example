@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import sliceUsers from "./sliceUsers";
+import sliceUsers, { setupUsers } from "./sliceUsers";
 import sliceValue from "./sliceValue";
 
 const store = configureStore({
@@ -8,5 +8,8 @@ const store = configureStore({
     value: sliceValue
   },
 });
+
+
+store.dispatch(setupUsers());
 
 export default store;
