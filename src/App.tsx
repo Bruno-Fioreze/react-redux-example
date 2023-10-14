@@ -1,17 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { initialUsers, filterUsers, useUsers } from "./redux/sliceUsers";
-import { useValueSlice, updateValue } from "./redux/sliceValue"
+import { initialUsers, useUsers } from "./redux/sliceUsers";
 import getUsers from "./services/getUsers"
 import { UserState } from "./types/user"
 import UserCard from "./components/UserCard"
-import OutlinedInput from '@mui/material/OutlinedInput';
-import Button from '@mui/material/Button';
+import Header from "./components/Header" 
 import "./App.css"
  
 function App() {
   const users = useSelector(useUsers);
-  const value = useSelector(useValueSlice);
+
 
   const dispatch = useDispatch();
  
@@ -32,29 +30,7 @@ function App() {
 
   return (
     <>
-      <div className="user-filter">
-        <OutlinedInput 
-          placeholder="Pesquise pelo nome"
-          onChange={(e) => {
-            dispatch(
-              updateValue(e.target.value)
-            )
-          }}
-        /> 
-        <Button 
-          variant="contained" color="success"
-          onClick={() => {
-            dispatch(
-              filterUsers(value.value)
-            )
-          }}
-        > 
-          Pesquisar
-        </Button>
-        <Button variant="contained" color="warning" onClick={() => { populateUsers() }}> 
-          Limpar Pesquisa
-        </Button>
-      </div>
+      <Header populateUsers={populateUsers} />
       <div className="user-list-container">
         {users && users.map(
           (user: UserState) => {
