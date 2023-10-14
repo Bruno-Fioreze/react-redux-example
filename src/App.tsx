@@ -34,6 +34,7 @@ function App() {
     <>
       <div className="user-filter">
         <OutlinedInput 
+          placeholder="Pesquise pelo nome"
           onChange={(e) => {
             dispatch(
               updateValue(e.target.value)
@@ -41,6 +42,7 @@ function App() {
           }}
         /> 
         <Button 
+          variant="contained" color="success"
           onClick={() => {
             dispatch(
               filterUsers(value.value)
@@ -49,7 +51,7 @@ function App() {
         > 
           Pesquisar
         </Button>
-        <Button className="btn-yellow" onClick={() => { populateUsers() }}> 
+        <Button variant="contained" color="warning" onClick={() => { populateUsers() }}> 
           Limpar Pesquisa
         </Button>
       </div>

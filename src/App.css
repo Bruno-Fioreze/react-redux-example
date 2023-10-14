@@ -4,6 +4,10 @@
   justify-content: end;
 }
 
+.user-filter button {
+  margin-left: 5px;
+}
+
 .user-list-container {
     display: flex;
     flex-wrap: wrap;
