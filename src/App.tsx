@@ -9,20 +9,16 @@ import "./App.css"
 function App() {
   const users = useSelector(useUsers);
   const dispatch = useDispatch();
-  const [initialData, setInitialData] = useState(true)
 
-  useEffect(() => {
+  useEffect(() => { 
     const fetchData = async () => {
       const result = await getUsers()
       const users: UserState[] = result.data
-      dispatch(addUsers(users))  
-      setInitialData(false)
+      dispatch(addUsers(users))   
     };
     
-    if( initialData ) {
-      fetchData();
-    }
-  }, []);
+    fetchData();
+  }, [dispatch]); 
 
   return (
     <div className="user-list-container">

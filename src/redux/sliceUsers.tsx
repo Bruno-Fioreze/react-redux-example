@@ -8,13 +8,16 @@ const sliceusers = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     addUsers(state, {payload}: PayloadAction<UserState[]>) {
-        return [...state, ...payload]
+        return [...payload]
     },
+    filterUsers(state, {payload}: PayloadAction<string>) {
+
+    }
   }, 
 });
 
 export default sliceusers.reducer;
-export const { addUsers} = sliceusers.actions;
+export const { addUsers } = sliceusers.actions;
 
 export const useUsers = (state: any) => {
   return state.users as UserState[]; 
