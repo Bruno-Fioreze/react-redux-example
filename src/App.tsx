@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { initialUsers, useUsers } from "./redux/sliceUsers";
+import { initialUsers, useUsers, setupUsers } from "./redux/sliceUsers";
 import getUsers from "./services/getUsers"
 import { UserState } from "./types/user"
 import UserCard from "./components/UserCard"
@@ -19,6 +19,10 @@ function App() {
     };
     fetchData();
   }
+
+  useEffect(() => {
+    populateUsers()
+  }, [])
 
   return (
     <>

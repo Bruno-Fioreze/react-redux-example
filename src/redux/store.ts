@@ -10,6 +10,6 @@ const store = configureStore({
 });
 
 
-store.dispatch(setupUsers());
+
 
 export default store;
